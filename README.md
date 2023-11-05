@@ -1,7 +1,7 @@
 # dev
 Developer version. Adding various features and fixing bugs
 
-This is first version.
+This is developer version.
 
 Next version: "beta"
 
