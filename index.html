@@ -15,6 +15,7 @@
             background-image: url('img/background/background3.jpg');
             background-size: cover;
             backdrop-filter: blur(30px);
+            transition: background-image 0.5s;
         }
         .container {
             background: rgba(0, 0, 0, 0.5);
@@ -134,6 +135,7 @@
             z-index: 1000; /* Убедитесь, что панель задач всегда наверху */
             justify-content: center;
             align-items: center;
+            transition: background-color 0.5s;
         }
 
         .icon-buttons-container {
@@ -276,6 +278,7 @@
             <span class="close-button" onclick="closeModal('modal-background')">×</span>
             <h3 class="modal-text">Choose a background:</h3>
             <img src="img/background/background1.jpg" onclick="changeBackground('background1.jpg')">
+            <img src="img/background/background2.jpg" onclick="changeBackground('background2.jpg')">
             <img src="img/background/background3.jpg" onclick="changeBackground('background3.jpg')">
         </div>
     </div>
@@ -395,8 +398,10 @@
     dragElement(document.getElementById("modal-background"));
 
     const backgroundToTaskbarColor = {
-        'background1.jpg': '#dad1ff',
+        'background1.jpg': '#d0b7ff',
+        'background2.jpg': '#dad1ff',
         'background3.jpg': '#eee6ff'
+        
         // Добавьте дополнительные пары фон-цвет, если нужно
     };
 
@@ -418,9 +423,6 @@
         const taskbar = document.querySelector('.taskbar');
         const color = backgroundToTaskbarColor[backgroundName] || '#423100'; // Цвет по умолчанию, если не найден
         taskbar.style.backgroundColor = color;
-        
-        // Закрыть модальное окно обоев, если оно открыто
-        modalBackground.style.display = 'none';
     }
 
 
